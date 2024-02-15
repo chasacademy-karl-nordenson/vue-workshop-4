@@ -1,5 +1,3 @@
-<!-- AddProduct.vue -->
-
 <template>
     <div>
       <h2>Add Product</h2>
@@ -28,7 +26,6 @@
       price: productPrice.value,
     };
     productsStore.addProduct(newProduct);
-    // Clear form fields
     productName.value = '';
     productPrice.value = 0;
   };

@@ -1,5 +1,3 @@
-<!-- ProductList.vue -->
-
 <template>
     <div>
       <h2>Product List</h2>

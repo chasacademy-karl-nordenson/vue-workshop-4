@@ -21,7 +21,6 @@ const router = useRouter();
 
 const logout = () => {
   authStore.logout();
-  // Redirect to home page upon successful logout
   router.push('/');
 };
 </script>

@@ -1,4 +1,3 @@
-// products.ts
 
 import { defineStore } from 'pinia';
 

@@ -1,4 +1,4 @@
-// store/auth.ts
+
 
 import { defineStore } from 'pinia';
 
