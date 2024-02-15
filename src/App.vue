@@ -1,26 +1,31 @@
+<!-- App.vue -->
+
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <Header />
+    <router-view />
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { createApp, onMounted } from 'vue'; // Import createApp from Vue
+import { createPinia } from 'pinia'; // Import createPinia from Pinia
+import Header from './components/Header.vue';
+import { useAuthStore } from './store/auth'; // Import useAuthStore
+import { router } from './router';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+const pinia = createPinia(); // Create Pinia instance
+const app = createApp(); // Create Vue app instance
+
+app.use(pinia); // Use Pinia
+
+onMounted(() => {
+  const authStore = useAuthStore(); // Use useAuthStore
+  if (authStore.isLoggedIn) {
+    console.log('User is already logged in');
+  } else {
+    console.log('User is not logged in');
   }
-}
+});
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
