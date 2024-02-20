@@ -2,8 +2,10 @@ import { createRouter, createWebHistory, RouteRecordRaw, NavigationGuardNext} fr
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
+import ProductsView from '../views/ProductsView.vue'; 
+import AddProduct from '../components/AddProduct.vue'; 
+import ProductList from '../components/ProductList.vue'; 
 import { useAuthStore } from '../store/auth'; 
-
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Home },
@@ -20,9 +22,22 @@ const routes: Array<RouteRecordRaw> = [
       }
     },
   },
+  { 
+    path: '/products',
+    component: ProductsView,
+  },
+  { 
+    path: '/products/add',
+    component: AddProduct,
+  },
+  {
+    path: '/products/list',
+    component: ProductList,
+  }
 ];
 
 export const router = createRouter({
   history: createWebHistory(),
   routes,
 });
+

@@ -1,5 +1,3 @@
-<!-- App.vue -->
-
 <template>
   <div id="app">
     <Header />
@@ -8,19 +6,19 @@
 </template>
 
 <script setup>
-import { createApp, onMounted } from 'vue'; // Import createApp from Vue
-import { createPinia } from 'pinia'; // Import createPinia from Pinia
+import { createApp, onMounted } from 'vue'; 
+import { createPinia } from 'pinia'; 
 import Header from './components/Header.vue';
-import { useAuthStore } from './store/auth'; // Import useAuthStore
+import { useAuthStore } from './store/auth'; 
 import { router } from './router';
 
-const pinia = createPinia(); // Create Pinia instance
-const app = createApp(); // Create Vue app instance
+const pinia = createPinia(); 
+const app = createApp(); 
 
-app.use(pinia); // Use Pinia
+app.use(pinia); 
 
 onMounted(() => {
-  const authStore = useAuthStore(); // Use useAuthStore
+  const authStore = useAuthStore(); 
   if (authStore.isLoggedIn) {
     console.log('User is already logged in');
   } else {

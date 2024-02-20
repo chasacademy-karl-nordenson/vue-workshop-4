@@ -1,36 +1,38 @@
-
 import { defineStore } from 'pinia';
 
-export interface Product {
+interface Product {
   id: number;
   name: string;
   price: number;
 }
 
-interface ProductsState {
-  products: Product[];
-}
-
 export const useProductsStore = defineStore('products', {
-  state: (): ProductsState => ({
-    products: [],
+  state: () => ({
+    products: [] as Product[],
   }),
   getters: {
-    totalProducts(state): number {
-      return state.products.length;
+    totalProducts(): number {
+      return this.products.length;
     },
-    productsAbovePrice(state): (price: number) => Product[] {
-      return (price: number) => state.products.filter(product => product.price > price);
+    productsAbovePrice(state) {
+      return (price: number) => {
+        return state.products.filter(product => product.price > price);
+      };
     },
   },
   actions: {
-    addProduct(state: ProductsState, product: Product): void {
-      state.products.push(product);
+    addProduct(product: Product) {
+      this.products.push(product);
     },
-    removeProduct(state: ProductsState, productId: number): void {
-      const index = state.products.findIndex(product => product.id === productId);
+    removeProduct(productId: number) {
+      console.log('Removing product with ID:', productId);
+      const index = this.products.findIndex(product => product.id === productId);
+      console.log('Index of product to remove:', index);
       if (index !== -1) {
-        state.products.splice(index, 1);
+        this.products.splice(index, 1);
+        console.log('Product removed. Updated products:', this.products);
+      } else {
+        console.warn('Product with ID', productId, 'not found.');
       }
     },
   },

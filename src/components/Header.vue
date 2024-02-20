@@ -9,6 +9,9 @@
       <p>Please log in</p>
       <router-link to="/login">Log In</router-link>
     </div>
+    <div >
+      <router-link to="/products">To Products</router-link>
+    </div>
   </header>
 </template>
 
