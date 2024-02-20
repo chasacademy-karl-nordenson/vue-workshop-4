@@ -2,8 +2,8 @@
 <template>
     <div>
       <h2>Dashboard</h2>
-      <p>This is a protected page. Only accessible when logged in.</p>
-      <button @click="logout">Log Out</button>
+      <p>Skyddad sida. Åtkomst ges när du är inloggad. Vilket du är!</p>
+      <button @click="logout">Logga ut</button>
     </div>
   </template>
   

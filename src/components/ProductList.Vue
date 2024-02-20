@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2>Product List</h2>
-    <p>Total Products: {{ totalProducts }}</p>
+    <h2>Produktlista</h2>
+    <p>Totalt antal produkter: {{ totalProducts }}</p>
     <ul>
       <li v-for="product in expensiveProducts" :key="product.id">
         {{ product.name }} - ${{ product.price }}
-        <button @click="removeProduct(product.id)">Remove</button>
+        <button @click="removeProduct(product.id)">Ta bort</button>
       </li>
     </ul>
   </div>

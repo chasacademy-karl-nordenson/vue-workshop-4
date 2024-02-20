@@ -1,9 +1,9 @@
 <template>
     <div>
-      <h2>Products</h2>
+      <h2>Produkter</h2>
       <nav>
-        <router-link to="/products/add">Add Product</router-link>
-        <router-link to="/products/list">Product List</router-link>
+        <router-link id="addProductButton" to="/products/add">Lägg till produkt</router-link>
+        <router-link to="/products/list">Produktlista</router-link>
       </nav>
       <router-view></router-view> 
     </div>
@@ -15,5 +15,8 @@
   
   <style scoped>
 
+#addProductButton {
+  margin-right: 5rem;
+}
   </style>
   

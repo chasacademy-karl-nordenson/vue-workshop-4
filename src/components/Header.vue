@@ -1,16 +1,16 @@
 <template>
   <header>
-    <h1>My App</h1>
+    <h1>Workshop 4 - Vue</h1>
     <div v-if="authStore.isLoggedIn">
-      <p>Welcome, User!</p>
-      <button @click="logout">Log Out</button>
+      <p>Välkommen, user!</p>
+      <button @click="logout">Logga ut</button>
     </div>
     <div v-else>
-      <p>Please log in</p>
-      <router-link to="/login">Log In</router-link>
+      <p>Logga in, snälla. </p>
+      <router-link to="/login">Logga in</router-link>
     </div>
     <div >
-      <router-link to="/products">To Products</router-link>
+      <router-link to="/products">Till Produkter</router-link>
     </div>
   </header>
 </template>
